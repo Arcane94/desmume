@@ -1426,7 +1426,7 @@ void retro_run (void)
          FramesWithPointer = (mouseX || mouseY) ? FramesWithPointerBase : FramesWithPointer;
       }
       // TOUCH: Pointer
-      else if(input_cb(0, RETRO_DEVICE_POINTER, 0, RETRO_DEVICE_ID_POINTER_PRESSED))
+      else if(input_cb(1, RETRO_DEVICE_POINTER, 0, RETRO_DEVICE_ID_POINTER_PRESSED))
       {
          const float X_FACTOR = ((float)layout.width / 65536.0f);
          const float Y_FACTOR = ((float)layout.height / 65536.0f);
