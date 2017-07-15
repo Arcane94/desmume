@@ -1426,13 +1426,13 @@ void retro_run (void)
          FramesWithPointer = (mouseX || mouseY) ? FramesWithPointerBase : FramesWithPointer;
       }
       // TOUCH: Pointer
-      else if(input_cb(1, RETRO_DEVICE_POINTER, 0, RETRO_DEVICE_ID_POINTER_PRESSED))
+      else if(input_cb(1, RETRO_DEVICE_POINTER, 1, RETRO_DEVICE_ID_POINTER_PRESSED))
       {
          const float X_FACTOR = ((float)layout.width / 65536.0f);
          const float Y_FACTOR = ((float)layout.height / 65536.0f);
 
-         float x = (input_cb(0, RETRO_DEVICE_POINTER, 0, RETRO_DEVICE_ID_POINTER_X) + 32768.0f) * X_FACTOR;
-         float y = (input_cb(0, RETRO_DEVICE_POINTER, 0, RETRO_DEVICE_ID_POINTER_Y) + 32768.0f) * Y_FACTOR;
+         float x = (input_cb(1, RETRO_DEVICE_POINTER, 1, RETRO_DEVICE_ID_POINTER_X) + 32768.0f) * X_FACTOR;
+         float y = (input_cb(1, RETRO_DEVICE_POINTER, 1, RETRO_DEVICE_ID_POINTER_Y) + 32768.0f) * Y_FACTOR;
 
          if ((x >= layout.touch_x) && (x < layout.touch_x + GPU_LR_FRAMEBUFFER_NATIVE_WIDTH) &&
                (y >= layout.touch_y) && (y < layout.touch_y + GPU_LR_FRAMEBUFFER_NATIVE_HEIGHT))
